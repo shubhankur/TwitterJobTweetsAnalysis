@@ -12,10 +12,10 @@ class TwitterClient(object):
         Class constructor or initialization method.
         '''
        
-        consumer_key = 'XXXXXXXXXXXX'
-        consumer_secret = 'XXXXXXXXXXXX'
-        access_token = 'XXXXXXXXXXXX'
-        access_token_secret = 'XXXXXXXXXXXX'
+        consumer_key = 'bBviJYZaDkdcKt4Mdu9qOlr21'
+        consumer_secret = 'K6Y5dgnb7VaxlZI6Sqii2rnqXrlk5BtFHCSMF6h3m7GGlvkgcO'
+        access_token = '480597137-qpJvzT7rDtKWebJGmbiUfD0FGAyu4BcGAN2iLazT'
+        access_token_secret = 'axaLvnVUS34OKqZSNGZyeITl2tI87dpqPJjkqC8HSZeAn'
  
        
         try:
@@ -59,7 +59,7 @@ class TwitterClient(object):
  
         try:
           
-            fetched_tweets = self.api.search(q = query, count = count)
+            fetched_tweets = self.api.search_tweets(q = query, count = count)
  
            
             for tweet in fetched_tweets:
@@ -71,12 +71,7 @@ class TwitterClient(object):
                
                 parsed_tweet['sentiment'] = self.get_tweet_sentiment(tweet.text)
  
-                if tweet.retweet_count > 0:
-                 
-                    if parsed_tweet not in tweets:
-                        tweets.append(parsed_tweet)
-                else:
-                    tweets.append(parsed_tweet)
+                tweets.append(parsed_tweet)
  
         
             return tweets

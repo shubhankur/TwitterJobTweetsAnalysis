@@ -59,7 +59,7 @@ class TwitterClient(object):
  
         try:
           
-            fetched_tweets = self.api.search(q = query, count = count)
+            fetched_tweets = self.api.(q = query, count = count)
  
            
             for tweet in fetched_tweets:
